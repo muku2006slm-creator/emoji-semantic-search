@@ -15,7 +15,7 @@ MANUAL = {
     "1F98D": "strong, powerful, jungle, ape, primate, beast, muscle",
     "1F984": "magical, fantasy, rare, special, mythical, whimsical, dreamy",
     "1F418": "huge, massive, memory, never forgets, gentle giant, heavy, big",
-    "1F400": "vermin, sneaky, traitor, snitch, pest, dirty, backstabber",
+    "1F400": "traitor, snitch, backstabber, betrayal, sneaky, disloyal",
     "1F42D": "tiny, small, timid, squeak, shy, little, cute",
     "1F578": "abandoned, neglected, dusty, forgotten, trap, old, unused, creepy",
     "1F940": "dying, fading, lost love, heartbreak, neglect, over, ending, sad",
