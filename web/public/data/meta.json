@@ -1,0 +1,7 @@
+{
+ "count": 1644,
+ "dims": 384,
+ "scale": 0.23601868748664856,
+ "dtype": "int8",
+ "model": "Xenova/all-MiniLM-L6-v2"
+}

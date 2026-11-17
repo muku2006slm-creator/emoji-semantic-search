@@ -2,5 +2,7 @@ venv/
 __pycache__/
 *.pyc
 .env
-embeddings.npy
-embeddings_mpnet.npy
+*.npy
+node_modules/
+dist/
+web/public/data/vectors_f32.bin
