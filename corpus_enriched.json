@@ -765,13 +765,14 @@
    "paid"
   ],
   "emoji": "🤑",
-  "text": "money-mouth face. money-mouth, paid",
+  "text": "money-mouth face. greedy, selfish, rich, wealth, money hungry, cash, profit, jackpot",
   "type": 1,
   "order": 30,
   "group": 0,
   "subgroup": 2,
   "version": 1,
-  "n_extra": 1
+  "n_extra": 1,
+  "enriched": true
  },
  {
   "label": "smiling face with open hands",
@@ -6794,7 +6795,7 @@
    "leftwards"
   ],
   "emoji": "🤛",
-  "text": "left-facing fist. left-facing, leftwards",
+  "text": "left-facing fist. fist bump, punch, approval, bro, respect",
   "type": 1,
   "order": 377,
   "group": 1,
@@ -6862,7 +6863,8 @@
     "tone": 5
    }
   ],
-  "n_extra": 1
+  "n_extra": 1,
+  "enriched": true
  },
  {
   "label": "right-facing fist",
@@ -6873,7 +6875,7 @@
    "rightwards"
   ],
   "emoji": "🤜",
-  "text": "right-facing fist. right-facing, rightwards",
+  "text": "right-facing fist. fist bump, punch, approval, bro, respect",
   "type": 1,
   "order": 383,
   "group": 1,
@@ -6941,7 +6943,8 @@
     "tone": 5
    }
   ],
-  "n_extra": 1
+  "n_extra": 1,
+  "enriched": true
  },
  {
   "label": "clapping hands",
@@ -44900,13 +44903,14 @@
    "world"
   ],
   "emoji": "🗺️",
-  "text": "world map",
+  "text": "world map. travel, exploring, adventure, planning a trip, geography, world",
   "type": 0,
   "order": 3970,
   "group": 5,
   "subgroup": 49,
   "version": 0.7,
-  "n_extra": 0
+  "n_extra": 0,
+  "enriched": true
  },
  {
   "label": "map of Japan",
@@ -44952,13 +44956,14 @@
    "snow-capped"
   ],
   "emoji": "🏔️",
-  "text": "snow-capped mountain. cold, snow-capped",
+  "text": "snow-capped mountain. challenge, climb, obstacle, achievement, peak, summit, hard",
   "type": 0,
   "order": 3974,
   "group": 5,
   "subgroup": 50,
   "version": 0.7,
-  "n_extra": 1
+  "n_extra": 1,
+  "enriched": true
  },
  {
   "label": "mountain",
@@ -45038,13 +45043,14 @@
    "camping"
   ],
   "emoji": "🏕️",
-  "text": "camping",
+  "text": "camping. outdoors, nature, getaway, tent, weekend, roughing it",
   "type": 0,
   "order": 3981,
   "group": 5,
   "subgroup": 50,
   "version": 0.7,
-  "n_extra": 0
+  "n_extra": 0,
+  "enriched": true
  },
  {
   "label": "beach with umbrella",
@@ -45054,13 +45060,14 @@
    "umbrella"
   ],
   "emoji": "🏖️",
-  "text": "beach with umbrella",
+  "text": "beach with umbrella. vacation, holiday, relax, summer, time off, sand, sea",
   "type": 0,
   "order": 3983,
   "group": 5,
   "subgroup": 50,
   "version": 0.7,
-  "n_extra": 0
+  "n_extra": 0,
+  "enriched": true
  },
  {
   "label": "desert",
@@ -45069,13 +45076,14 @@
    "desert"
   ],
   "emoji": "🏜️",
-  "text": "desert",
+  "text": "desert. barren, empty, dry, nothing, lonely, wasteland, heat",
   "type": 0,
   "order": 3985,
   "group": 5,
   "subgroup": 50,
   "version": 0.7,
-  "n_extra": 0
+  "n_extra": 0,
+  "enriched": true
  },
  {
   "label": "desert island",
@@ -45085,13 +45093,14 @@
    "island"
   ],
   "emoji": "🏝️",
-  "text": "desert island",
+  "text": "desert island. paradise, escape, stranded, isolated, tropical, getaway, alone",
   "type": 0,
   "order": 3987,
   "group": 5,
   "subgroup": 50,
   "version": 0.7,
-  "n_extra": 0
+  "n_extra": 0,
+  "enriched": true
  },
  {
   "label": "national park",
@@ -45116,13 +45125,14 @@
    "stadium"
   ],
   "emoji": "🏟️",
-  "text": "stadium",
+  "text": "stadium. crowd, big game, event, fans, arena, match day",
   "type": 0,
   "order": 3991,
   "group": 5,
   "subgroup": 51,
   "version": 0.7,
-  "n_extra": 0
+  "n_extra": 0,
+  "enriched": true
  },
  {
   "label": "classical building",
@@ -45391,13 +45401,14 @@
    "building"
   ],
   "emoji": "🏦",
-  "text": "bank. building",
+  "text": "bank. savings, loan, finance, deposit, interest, account",
   "type": 1,
   "order": 4010,
   "group": 5,
   "subgroup": 51,
   "version": 0.6,
-  "n_extra": 0
+  "n_extra": 0,
+  "enriched": true
  },
  {
   "label": "hotel",
@@ -45457,13 +45468,14 @@
    "building"
   ],
   "emoji": "🏫",
-  "text": "school. building",
+  "text": "school. education, learning, studying, childhood, class, campus",
   "type": 1,
   "order": 4014,
   "group": 5,
   "subgroup": 51,
   "version": 0.6,
-  "n_extra": 0
+  "n_extra": 0,
+  "enriched": true
  },
  {
   "label": "department store",
@@ -52988,13 +53000,14 @@
    "win"
   ],
   "emoji": "💰️",
-  "text": "money bag. bank, bet, billion, cash, cost, dollar, gold, million, moneybag, paid, paying, pot, rich, win",
+  "text": "money bag. wealth, riches, savings, jackpot, payout, fortune, prize money",
   "type": 1,
   "order": 4478,
   "group": 7,
   "subgroup": 73,
   "version": 0.6,
-  "n_extra": 13
+  "n_extra": 13,
+  "enriched": true
  },
  {
   "label": "treasure chest",
