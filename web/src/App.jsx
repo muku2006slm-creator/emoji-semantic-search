@@ -1,94 +1,150 @@
-import { useEffect, useState } from 'react';
-import { pipeline, env } from '@huggingface/transformers';
+import { useEffect, useRef, useState } from 'react';
+import { loadData, loadModel, rank } from './search';
 
-env.allowLocalModels = false;
+const EXAMPLES = [
+  'feeling overwhelmed at work',
+  'quiet happiness',
+  'someone betrayed me',
+  'celebrating with friends',
+  'that looks delicious',
+  'abandoned and forgotten',
+];
+
+const RESULTS = 12;
 
 export default function App() {
-  const [log, setLog] = useState([]);
+  const [phase, setPhase] = useState('loading');   // loading | ready | error
+  const [progress, setProgress] = useState(0);
+  const [error, setError] = useState('');
+  const [query, setQuery] = useState('');
   const [results, setResults] = useState([]);
+  const [took, setTook] = useState(null);
+  const [copied, setCopied] = useState(-1);
 
-  const say = (m) => setLog((l) => [...l, m]);
+  const store = useRef(null);
+  const extractor = useRef(null);
+  const runId = useRef(0);
+  const inputEl = useRef(null);
 
   useEffect(() => {
-    let cancelled = false;
-
+    let dead = false;
     (async () => {
-      // ---- stage 1: data ----
-      say('fetching data...');
-      const meta = await (await fetch('/data/meta.json')).json();
-      const items = await (await fetch('/data/emoji.json')).json();
-      const buf = await (await fetch('/data/vectors_int8.bin')).arrayBuffer();
-      const Q = new Int8Array(buf);
-      say(`data ok — ${items.length} emoji, ${meta.dims}d, ${Q.length} int8 values`);
-
-      if (Q.length !== meta.count * meta.dims) {
-        say('MISMATCH: vector buffer size does not match meta');
-        return;
+      try {
+        store.current = await loadData();
+        extractor.current = await loadModel((p) => {
+          if (p.status === 'progress' && p.file?.endsWith('.onnx')) {
+            setProgress((cur) => Math.max(cur, p.progress ?? 0));
+          }
+        });
+        if (dead) return;
+        setProgress(100);
+        setPhase('ready');
+        inputEl.current?.focus();
+      } catch (e) {
+        if (!dead) { setError(e.message); setPhase('error'); }
       }
-
-      // ---- stage 2: model ----
-      say('loading model (first time downloads ~25MB)...');
-      const t0 = performance.now();
-      const extractor = await pipeline(
-        'feature-extraction',
-        'Xenova/all-MiniLM-L6-v2',
-        {
-          dtype: 'q8',
-          progress_callback: (p) => {
-            if (p.status === 'progress' && p.file?.endsWith('.onnx')) {
-              const pct = Math.round(p.progress ?? 0);
-              if (pct % 20 === 0) say(`  ${p.file} ${pct}%`);
-            }
-          },
-        }
-      );
-      if (cancelled) return;
-      say(`model ready in ${((performance.now() - t0) / 1000).toFixed(1)}s`);
-
-      // ---- stage 3: one search ----
-      const query = 'feeling overwhelmed at work';
-      const t1 = performance.now();
-      const out = await extractor(query, { pooling: 'mean', normalize: true });
-      const qv = out.data;
-      say(`query embedded: ${qv.length} dims in ${(performance.now() - t1).toFixed(1)}ms`);
-
-      const t2 = performance.now();
-      const n = meta.count, d = meta.dims;
-      const scores = new Float32Array(n);
-      for (let i = 0; i < n; i++) {
-        let s = 0;
-        const off = i * d;
-        for (let j = 0; j < d; j++) s += Q[off + j] * qv[j];
-        scores[i] = s;
-      }
-      const top = Array.from(scores.keys())
-        .sort((a, b) => scores[b] - scores[a])
-        .slice(0, 12);
-      say(`searched ${n} vectors in ${(performance.now() - t2).toFixed(2)}ms`);
-
-      const k = meta.scale / 127;   // recover true cosine for display
-      setResults(top.map((i) => ({ ...items[i], score: scores[i] * k })));
-    })().catch((e) => say('ERROR: ' + e.message));
-
-    return () => { cancelled = true; };
+    })();
+    return () => { dead = true; };
   }, []);
 
+  useEffect(() => {
+    if (phase !== 'ready') return;
+    const q = query.trim();
+    if (!q) { setResults([]); setTook(null); return; }
+
+    const id = ++runId.current;
+    const timer = setTimeout(async () => {
+      const t0 = performance.now();
+      const out = await extractor.current(q, { pooling: 'mean', normalize: true });
+      if (id !== runId.current) return;          // a newer keystroke won
+      const hits = rank(store.current, out.data, RESULTS);
+      setResults(hits.map((h) => ({ ...store.current.items[h.i], score: h.score })));
+      setTook(performance.now() - t0);
+    }, 180);
+
+    return () => clearTimeout(timer);
+  }, [query, phase]);
+
+  async function copy(emoji, idx) {
+    try {
+      await navigator.clipboard.writeText(emoji);
+      setCopied(idx);
+      setTimeout(() => setCopied((c) => (c === idx ? -1 : c)), 1200);
+    } catch { /* clipboard blocked; silently ignore */ }
+  }
+
   return (
-    <div style={{ fontFamily: 'ui-monospace, monospace', padding: 24, maxWidth: 720 }}>
-      <h2>pipeline test</h2>
-      <pre style={{ background: '#f4f4f4', padding: 12, whiteSpace: 'pre-wrap' }}>
-        {log.join('\n')}
-      </pre>
-      <h3>query: "feeling overwhelmed at work"</h3>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-        {results.map((r, i) => (
-          <div key={i} style={{ textAlign: 'center', width: 90 }}>
-            <div style={{ fontSize: 40 }}>{r.e}</div>
-            <div style={{ fontSize: 11, color: '#666' }}>{r.score.toFixed(3)}</div>
-            <div style={{ fontSize: 10, color: '#999' }}>{r.n}</div>
-          </div>
-        ))}
+    <main className="wrap">
+      <header className="top">
+        <h1>Emoji by meaning</h1>
+        <p className="sub">
+          Describe a feeling or a situation. Nothing you type leaves your device.
+        </p>
+      </header>
+
+      <div className="field">
+        <input
+          ref={inputEl}
+          className="q"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={phase === 'ready' ? 'how are you feeling?' : 'loading the model…'}
+          disabled={phase !== 'ready'}
+          autoComplete="off"
+          spellCheck="false"
+          aria-label="Search emoji by meaning"
+        />
+        <div className="rule">
+          <div
+            className={'fill' + (phase === 'ready' ? ' done' : '')}
+            style={{ width: `${progress}%` }}
+          />
+        </div>
       </div>
-    </div>
+
+      {phase === 'loading' && (
+        <p className="note">
+          Downloading the language model, about 25 MB. It is cached after the
+          first visit.
+        </p>
+      )}
+
+      {phase === 'error' && <p className="note err">Could not start: {error}</p>}
+
+      {phase === 'ready' && !query.trim() && (
+        <div className="chips">
+          {EXAMPLES.map((ex) => (
+            <button key={ex} className="chip" onClick={() => setQuery(ex)}>
+              {ex}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {results.length > 0 && (
+        <>
+          <ul className="grid">
+            {results.map((r, i) => (
+              <li key={r.e + i}>
+                <button
+                  className="cell"
+                  onClick={() => copy(r.e, i)}
+                  title={`${r.n} — click to copy`}
+                >
+                  <span className="glyph">{r.e}</span>
+                  <span className="score">
+                    {copied === i ? 'copied' : r.score.toFixed(2)}
+                  </span>
+                </button>
+              </li>
+            ))}
+          </ul>
+          <p className="stats">
+            {store.current?.meta.count.toLocaleString()} emoji searched in{' '}
+            {took?.toFixed(0)} ms. Click any emoji to copy it.
+          </p>
+        </>
+      )}
+    </main>
   );
 }
