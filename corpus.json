@@ -1462,30 +1462,6 @@
   "n_extra": 10
  },
  {
-  "label": "face with bags under eyes",
-  "hexcode": "1FAE9",
-  "tags": [
-   "bags",
-   "bored",
-   "exhausted",
-   "eyes",
-   "face",
-   "fatigued",
-   "late",
-   "sleepy",
-   "tired",
-   "weary"
-  ],
-  "emoji": "🫩",
-  "text": "face with bags under eyes. bored, exhausted, fatigued, late, sleepy, tired, weary",
-  "type": 1,
-  "order": 62,
-  "group": 0,
-  "subgroup": 5,
-  "version": 16,
-  "n_extra": 6
- },
- {
   "label": "face with medical mask",
   "hexcode": "1F637",
   "tags": [
@@ -2136,26 +2112,6 @@
   "version": 0.6,
   "emoticon": ":$",
   "n_extra": 13
- },
- {
-  "label": "distorted face",
-  "hexcode": "1FAEA",
-  "tags": [
-   "anxiety",
-   "bloated",
-   "panic",
-   "shocked",
-   "surprised",
-   "vulnerable"
-  ],
-  "emoji": "🫪",
-  "text": "distorted face. anxiety, bloated, panic, shocked, surprised, vulnerable",
-  "type": 1,
-  "order": 91,
-  "group": 0,
-  "subgroup": 9,
-  "version": 17,
-  "n_extra": 5
  },
  {
   "label": "pleading face",
@@ -3890,27 +3846,6 @@
   "subgroup": 15,
   "version": 0.6,
   "n_extra": 3
- },
- {
-  "label": "fight cloud",
-  "hexcode": "1FAEF",
-  "tags": [
-   "argument",
-   "brawl",
-   "debate",
-   "disagreement",
-   "fight",
-   "ruckus",
-   "wrestle"
-  ],
-  "emoji": "🫯",
-  "text": "fight cloud. argument, brawl, debate, disagreement, ruckus, wrestle",
-  "type": 1,
-  "order": 170,
-  "group": 0,
-  "subgroup": 15,
-  "version": 17,
-  "n_extra": 5
  },
  {
   "label": "collision",
@@ -22898,28 +22833,6 @@
   "n_extra": 4
  },
  {
-  "label": "hairy creature",
-  "hexcode": "1FAC8",
-  "tags": [
-   "bigfoot",
-   "cryptid",
-   "forest",
-   "giant",
-   "hairy",
-   "sasquatch",
-   "woodwose",
-   "yeti"
-  ],
-  "emoji": "🫈",
-  "text": "hairy creature. bigfoot, cryptid, forest, giant, sasquatch, woodwose, yeti",
-  "type": 1,
-  "order": 1891,
-  "group": 1,
-  "subgroup": 26,
-  "version": 17,
-  "n_extra": 6
- },
- {
   "label": "person getting massage",
   "hexcode": "1F486",
   "tags": [
@@ -26806,84 +26719,6 @@
    }
   ],
   "n_extra": 9
- },
- {
-  "label": "ballet dancer",
-  "hexcode": "1F9D1-200D-1FA70",
-  "tags": [
-   "ballet",
-   "dancer"
-  ],
-  "emoji": "🧑‍🩰",
-  "text": "ballet dancer",
-  "type": 1,
-  "order": 2414,
-  "group": 1,
-  "subgroup": 27,
-  "version": 17,
-  "skins": [
-   {
-    "label": "ballet dancer: light skin tone",
-    "hexcode": "1F9D1-1F3FB-200D-1FA70",
-    "emoji": "🧑🏻‍🩰",
-    "text": "",
-    "type": 1,
-    "order": 2415,
-    "group": 1,
-    "subgroup": 27,
-    "version": 17,
-    "tone": 1
-   },
-   {
-    "label": "ballet dancer: medium-light skin tone",
-    "hexcode": "1F9D1-1F3FC-200D-1FA70",
-    "emoji": "🧑🏼‍🩰",
-    "text": "",
-    "type": 1,
-    "order": 2416,
-    "group": 1,
-    "subgroup": 27,
-    "version": 17,
-    "tone": 2
-   },
-   {
-    "label": "ballet dancer: medium skin tone",
-    "hexcode": "1F9D1-1F3FD-200D-1FA70",
-    "emoji": "🧑🏽‍🩰",
-    "text": "",
-    "type": 1,
-    "order": 2417,
-    "group": 1,
-    "subgroup": 27,
-    "version": 17,
-    "tone": 3
-   },
-   {
-    "label": "ballet dancer: medium-dark skin tone",
-    "hexcode": "1F9D1-1F3FE-200D-1FA70",
-    "emoji": "🧑🏾‍🩰",
-    "text": "",
-    "type": 1,
-    "order": 2418,
-    "group": 1,
-    "subgroup": 27,
-    "version": 17,
-    "tone": 4
-   },
-   {
-    "label": "ballet dancer: dark skin tone",
-    "hexcode": "1F9D1-1F3FF-200D-1FA70",
-    "emoji": "🧑🏿‍🩰",
-    "text": "",
-    "type": 1,
-    "order": 2419,
-    "group": 1,
-    "subgroup": 27,
-    "version": 17,
-    "tone": 5
-   }
-  ],
-  "n_extra": 0
  },
  {
   "label": "woman dancing",
@@ -39236,29 +39071,6 @@
   "n_extra": 5
  },
  {
-  "label": "fingerprint",
-  "hexcode": "1FAC6",
-  "tags": [
-   "clue",
-   "crime",
-   "detective",
-   "forensics",
-   "identity",
-   "mystery",
-   "print",
-   "safety",
-   "trace"
-  ],
-  "emoji": "🫆",
-  "text": "fingerprint. clue, crime, detective, forensics, identity, mystery, print, safety, trace",
-  "type": 1,
-  "order": 3655,
-  "group": 1,
-  "subgroup": 31,
-  "version": 16,
-  "n_extra": 8
- },
- {
   "label": "monkey face",
   "hexcode": "1F435",
   "tags": [
@@ -41103,23 +40915,6 @@
   "n_extra": 3
  },
  {
-  "label": "orca",
-  "hexcode": "1FACD",
-  "tags": [
-   "marine",
-   "ocean",
-   "whale"
-  ],
-  "emoji": "🫍",
-  "text": "orca. marine, ocean, whale",
-  "type": 1,
-  "order": 3768,
-  "group": 3,
-  "subgroup": 38,
-  "version": 17,
-  "n_extra": 2
- },
- {
   "label": "seal",
   "hexcode": "1F9AD",
   "tags": [
@@ -42196,30 +41991,6 @@
   "n_extra": 1
  },
  {
-  "label": "leafless tree",
-  "hexcode": "1FABE",
-  "tags": [
-   "bare",
-   "barren",
-   "branches",
-   "dead",
-   "drought",
-   "leafless",
-   "tree",
-   "trunk",
-   "winter",
-   "wood"
-  ],
-  "emoji": "🪾",
-  "text": "leafless tree. bare, barren, branches, dead, drought, trunk, winter, wood",
-  "type": 1,
-  "order": 3831,
-  "group": 3,
-  "subgroup": 41,
-  "version": 16,
-  "n_extra": 7
- },
- {
   "label": "grapes",
   "hexcode": "1F347",
   "tags": [
@@ -42903,29 +42674,6 @@
   "subgroup": 43,
   "version": 15.1,
   "n_extra": 14
- },
- {
-  "label": "root vegetable",
-  "hexcode": "1FADC",
-  "tags": [
-   "beet",
-   "food",
-   "garden",
-   "radish",
-   "root",
-   "salad",
-   "turnip",
-   "vegetable",
-   "vegetarian"
-  ],
-  "emoji": "🫜",
-  "text": "root vegetable. beet, food, garden, radish, salad, turnip, vegetarian",
-  "type": 1,
-  "order": 3871,
-  "group": 4,
-  "subgroup": 43,
-  "version": 16,
-  "n_extra": 6
  },
  {
   "label": "bread",
@@ -44884,27 +44632,6 @@
   "subgroup": 50,
   "version": 0.7,
   "n_extra": 0
- },
- {
-  "label": "landslide",
-  "hexcode": "1F6D8",
-  "tags": [
-   "avalanche",
-   "danger",
-   "disaster",
-   "earthquake",
-   "mountain",
-   "mudslide",
-   "rocks"
-  ],
-  "emoji": "🛘",
-  "text": "landslide. avalanche, danger, disaster, earthquake, mountain, mudslide, rocks",
-  "type": 1,
-  "order": 3977,
-  "group": 5,
-  "subgroup": 50,
-  "version": 17,
-  "n_extra": 6
  },
  {
   "label": "volcano",
@@ -51673,26 +51400,6 @@
   "n_extra": 1
  },
  {
-  "label": "trombone",
-  "hexcode": "1FA8A",
-  "tags": [
-   "brass",
-   "instrument",
-   "jazz",
-   "music",
-   "sad",
-   "slide"
-  ],
-  "emoji": "🪊",
-  "text": "trombone. brass, instrument, jazz, music, sad, slide",
-  "type": 1,
-  "order": 4402,
-  "group": 7,
-  "subgroup": 68,
-  "version": 17,
-  "n_extra": 5
- },
- {
   "label": "accordion",
   "hexcode": "1FA97",
   "tags": [
@@ -51863,25 +51570,6 @@
   "subgroup": 68,
   "version": 15,
   "n_extra": 10
- },
- {
-  "label": "harp",
-  "hexcode": "1FA89",
-  "tags": [
-   "cupid",
-   "instrument",
-   "love",
-   "music",
-   "orchestra"
-  ],
-  "emoji": "🪉",
-  "text": "harp. cupid, instrument, love, music, orchestra",
-  "type": 1,
-  "order": 4412,
-  "group": 7,
-  "subgroup": 68,
-  "version": 16,
-  "n_extra": 4
  },
  {
   "label": "mobile phone",
@@ -52894,29 +52582,6 @@
   "subgroup": 73,
   "version": 0.6,
   "n_extra": 13
- },
- {
-  "label": "treasure chest",
-  "hexcode": "1FA8E",
-  "tags": [
-   "gem",
-   "gold",
-   "jewels",
-   "loot",
-   "money",
-   "prize",
-   "silver",
-   "valuables",
-   "wealth"
-  ],
-  "emoji": "🪎",
-  "text": "treasure chest. gem, gold, jewels, loot, money, prize, silver, valuables, wealth",
-  "type": 1,
-  "order": 4479,
-  "group": 7,
-  "subgroup": 73,
-  "version": 17,
-  "n_extra": 8
  },
  {
   "label": "yen banknote",
@@ -54462,28 +54127,6 @@
   "subgroup": 78,
   "version": 13,
   "n_extra": 2
- },
- {
-  "label": "shovel",
-  "hexcode": "1FA8F",
-  "tags": [
-   "bury",
-   "dig",
-   "garden",
-   "hole",
-   "plant",
-   "scoop",
-   "snow",
-   "spade"
-  ],
-  "emoji": "🪏",
-  "text": "shovel. bury, dig, garden, hole, plant, scoop, snow, spade",
-  "type": 1,
-  "order": 4591,
-  "group": 7,
-  "subgroup": 78,
-  "version": 16,
-  "n_extra": 7
  },
  {
   "label": "alembic",
@@ -57966,28 +57609,6 @@
   "subgroup": 93,
   "version": 0.6,
   "n_extra": 1
- },
- {
-  "label": "splatter",
-  "hexcode": "1FADF",
-  "tags": [
-   "drip",
-   "holi",
-   "ink",
-   "liquid",
-   "mess",
-   "paint",
-   "spill",
-   "stain"
-  ],
-  "emoji": "🫟",
-  "text": "splatter. drip, holi, ink, liquid, mess, paint, spill, stain",
-  "type": 1,
-  "order": 4837,
-  "group": 8,
-  "subgroup": 93,
-  "version": 16,
-  "n_extra": 7
  },
  {
   "label": "keycap: #",

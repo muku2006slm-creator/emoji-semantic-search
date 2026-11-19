@@ -10,7 +10,6 @@ MANUAL = {
     "270D": "writing, note, signature, author, compose, pen, journal, record",
     "1F91A": "stop, halt, wait, high five, pause, hold on, enough",
     "1F930": "expecting, baby, maternity, belly, birth, mother, soon",
-    "1F9D1-200D-1FA70": "dance, graceful, performance, elegant, poise, theatre, discipline",
     "1F574": "mysterious, slick, business, suave, suspicious, agent, spy, cool",
     "1F98D": "strong, powerful, jungle, ape, primate, beast, muscle",
     "1F984": "magical, fantasy, rare, special, mythical, whimsical, dreamy",
@@ -40,3 +39,7 @@ MANUAL = {
     "1F945": "score, target, aim, achieve, football, soccer, objective",
     "26F8": "winter, cold, rink, glide, graceful, sport, slippery",
 }
+
+
+    # 1F9D1-200D-1FA70 (ballet dancer) removed: Unicode 17, filtered out by
+    # MAX_VERSION in build_corpus.py since most devices have no glyph for it.

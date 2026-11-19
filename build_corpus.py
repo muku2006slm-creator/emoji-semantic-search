@@ -11,15 +11,15 @@ GROUP_NAMES = {
 }
 
 DROP_GROUPS = {2, 9}          # skin-tone components, country flags
+MAX_VERSION = 15.1            # v16/v17 glyphs are missing on most devices
 
 # ---------- filter ----------
 kept = [
     e for e in data
-    if "group" in e and e["group"] not in DROP_GROUPS
+    if "group" in e
+    and e["group"] not in DROP_GROUPS
+    and (e.get("version") or 0) <= MAX_VERSION
 ]
-print(f"Before filter: {len(data)}")
-print(f"After  filter: {len(kept)}")
-print(f"Removed      : {len(data) - len(kept)}")
 
 # ---------- build embedding text ----------
 def build_text(e):
