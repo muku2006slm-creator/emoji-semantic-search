@@ -2,12 +2,12 @@ import { useEffect, useRef, useState } from 'react';
 import { loadData, loadModel, rank } from './search';
 
 const EXAMPLES = [
-  'feeling overwhelmed at work',
-  'quiet happiness',
   'someone betrayed me',
-  'celebrating with friends',
-  'that looks delicious',
   'abandoned and forgotten',
+  'terrified',
+  'celebrating with friends',
+  'warm comfort food',
+  'award for winning',
 ];
 
 const RESULTS = 12;
